@@ -27,10 +27,6 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps<BlogDetailPageProps> = async ({ params }) => {
   const slug = params?.slug;
-  if (!slug)
-    return {
-      notFound: true,
-    };
 
   return {
     props: {
