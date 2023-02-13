@@ -1,7 +1,3 @@
-# next-lint-template
+# sample-markdown-blog-nextjs
 
-Qiita で説明した Next.js の Lint 設定のテンプレートプロジェクトです
-
-## Qiita
-
-https://qiita.com/ganja_tuber/items/95507e658ecfef7e9457
+Zenn の記事で解説するマークダウンブログのサンプルです。
