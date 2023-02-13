@@ -1,16 +1,60 @@
 html,
-body {
+body,
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+.container {
+  max-width: 750px;
+  padding: 12px 12px 0;
+  margin: 0 auto;
 
-* {
-  box-sizing: border-box;
+  h1 {
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: solid 2px gray;
+  }
+
+  h2 {
+    padding-bottom: 4px;
+    margin: 16px 0;
+    font-size: 21px;
+    font-weight: bold;
+    border-bottom: solid 1px gray;
+  }
+
+  h3 {
+    margin: 16px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 6px 0;
+  }
+
+  a {
+    color: #0af;
+    transition: opacity 0.1s linear;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 12px;
+    list-style-position: inside;
+  }
 }
