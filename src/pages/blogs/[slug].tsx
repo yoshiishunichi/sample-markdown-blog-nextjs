@@ -9,7 +9,7 @@ type BlogDetailPageProps = {
 };
 
 const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ htmlContent }) => {
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  return <div className="container" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {

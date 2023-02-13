@@ -10,7 +10,7 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ slugs }) => {
   return (
-    <div>
+    <div className="container">
       <h1>記事一覧</h1>
       <ul>
         {slugs.map((slug, i) => {
