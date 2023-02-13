@@ -2,14 +2,14 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 import { getAllSlug } from "libs/get-all-slug";
 import { getMarkdown } from "libs/get-markdown";
-import { markdownToHtml } from "libs/markdown-to-html";
+import { markdownToReactElement } from "libs/markdown-to-react-element";
 
 type BlogDetailPageProps = {
-  htmlContent: string;
+  markdownContent: string;
 };
 
-const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ htmlContent }) => {
-  return <div className="container" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ markdownContent }) => {
+  return <div className="container">{markdownToReactElement(markdownContent)}</div>;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -25,12 +25,12 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<BlogDetailPageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogDetailPageProps> = ({ params }) => {
   const slug = params?.slug;
 
   return {
     props: {
-      htmlContent: await markdownToHtml(getMarkdown(`contents/${slug}.md`).content),
+      markdownContent: getMarkdown(`contents/${slug}.md`).content,
     },
   };
 };
