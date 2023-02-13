@@ -6,6 +6,7 @@ import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 
+import CustomImage from "components/CustomImage";
 import CustomLink from "components/CustomLink";
 
 export const markdownToReactElement = (markdownContent: string): ReactElement => {
@@ -20,6 +21,7 @@ export const markdownToReactElement = (markdownContent: string): ReactElement =>
       Fragment,
       components: {
         a: CustomLink,
+        img: CustomImage,
       },
       createElement,
     })
